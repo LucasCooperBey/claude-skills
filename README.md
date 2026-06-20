@@ -17,6 +17,13 @@ These are the generic, no-secrets, no-personal-infra skills extracted from a lar
 | **reverse-engineer-to-learn** | Strategic teardown of an app/package/repo to inform a new build — the 5 strategic questions, not a clone. |
 | **package-research** | Researches packages/APIs against real source before integration, instead of guessing an API surface. |
 | **coding-agents** | Core patterns for building AI coding agents — tool calling, agent loops, framework selection, production considerations. |
+| **writing-plans** | Detailed implementation plans for multi-step tasks — exact files, code, test commands — before touching code. |
+| **executing-plans** | Implements a written plan in batched phases with review checkpoints; stops on blockers instead of guessing. |
+| **breakdown** | Multi-altitude explainer of a body of work — one-sentence → 100k/50k/30k/10k-ft, plus ASCII C4 diagrams. |
+| **naming-the-machine** | Scans your systems to find and name emergent products / methodologies / IP hiding in what you've already built. |
+| **deep-recon** | Multi-agent research swarm that finds existing solutions before you write a line of code. |
+| **threat-model** | Repository-grounded threat modeling — trust boundaries, assets, abuse paths tied to real code, not a generic OWASP checklist. |
+| **mcp-builder** | Builds MCP servers for API integration across the full dev lifecycle, research → evaluation. |
 
 ## Install
 
