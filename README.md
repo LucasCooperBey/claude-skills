@@ -4,7 +4,7 @@ A curated, **no-secrets** library of [Claude Code](https://claude.com/claude-cod
 
 These are the generic skills extracted from a larger private Claude Code setup â€” every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
 
-## The skills (50)
+## The skills (52)
 
 | Skill | What it does |
 |---|---|
@@ -39,6 +39,8 @@ These are the generic skills extracted from a larger private Claude Code setup â
 | **output-enforcement** | Overrides default LLM truncation behavior. |
 | **package-research** | Researches packages, dependencies, and APIs before integration. |
 | **pdf-generation** | Generates PDFs using Typst templates, handles print layouts, and processes images with Sharp. |
+| **pp2p** | Two critique passes + polish + mutation-test-the-tests + a different-model-family review looped until clean. Default for real features. |
+| **pp3p** | Three critique passes + polish + mutation gate + adversarial cross-family loop. For auth, payments, data integrity. |
 | **prompt-engineer** | Turn a rough natural-language ask into a high-quality, Anthropic-spec prompt. |
 | **prompt-grounding** | Audits a prompt against the actual codebase, docs, and strategy files â€” separates fact from invention, findâ€¦ |
 | **redesign** | Upgrades existing websites and apps to premium quality. |
@@ -63,7 +65,9 @@ These are the generic skills extracted from a larger private Claude Code setup â
 
 ```bash
 git clone https://github.com/Lucface/claude-skills.git
-cp -R claude-skills/skills/grill ~/.claude/skills/    # copy any you want
+cp -R claude-skills/skills/pp2p ~/.claude/skills/
+cp -R claude-skills/skills/pp3p ~/.claude/skills/
+cp -R claude-skills/skills/grill ~/.claude/skills/    # or any other folder
 ```
 
 Restart Claude Code; the skill activates automatically when your task matches its description, or invoke it explicitly. Placeholders like `<your-output-dir>` mark spots to point at your own paths.
