@@ -64,7 +64,7 @@ These are the generic skills extracted from a larger private Claude Code setup �
 ## Install
 
 ```bash
-git clone https://github.com/Lucface/claude-skills.git
+git clone https://github.com/LucasCooperBey/claude-skills.git
 cp -R claude-skills/skills/pp2p ~/.claude/skills/
 cp -R claude-skills/skills/pp3p ~/.claude/skills/
 cp -R claude-skills/skills/grill ~/.claude/skills/    # or any other folder
@@ -74,4 +74,4 @@ Restart Claude Code; the skill activates automatically when your task matches it
 
 ## License
 
-MIT — see [LICENSE](./LICENSE). By [@Lucface](https://github.com/Lucface). Extracted clean from a private setup; more land here as they're scrubbed.
+MIT — see [LICENSE](./LICENSE). By [@LucasCooperBey](https://github.com/LucasCooperBey). Extracted clean from a private setup; more land here as they're scrubbed.
