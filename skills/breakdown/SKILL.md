@@ -12,7 +12,7 @@ This skill exists because: **we often build something powerful that took a long,
 ## Step 0: Identify the subject + mine the prompt
 
 **Bare invocation (`/breakdown` with no args): assume, don't ask.** Default to:
-- **Audience = Lucas, the owner** (smart, non-academic; plain language first, depth on demand).
+- **Audience = the person asking** (assume smart but not academic; plain language first, depth on demand).
 - **Heavy ASCII** throughout: this is the house style for breakdowns.
 - **Subject = the substantive work done in the current session.**
 - **Skip the prompt-coaching** (Step 0.2's "improved variant"): don't append it to a normal breakdown.
@@ -41,9 +41,9 @@ Rules for the altitudes:
 
 ## Step 3: Where it sits (the architecture placement)
 
-Place the work inside the system's existing structure. Read and cite:
-- `<your standards/registry doc>` (the registry of reusable primitives): which primitive is this, or does it create a new one?
-- `<your architecture north-star doc>` (the 8-layer north-star): which layer(s) does it touch?
+Place the work inside the project's existing structure. If the project keeps these docs, read and cite them; if it does not, say so in one line and place the work from the code itself:
+- A registry or list of its reusable parts: which part is this, or does it add a new one?
+- An architecture overview: which layer(s) does it touch?
 
 Show an ASCII placement (the relevant tier/layer slice with this work highlighted). Then state how it relates to the *adjacent* primitives (what it depends on, what depends on it, what it composes with).
 
@@ -62,7 +62,7 @@ These eight facets make the explanation feel complete and make it directly reusa
 
 ## Step 5: Honest gaps
 
-A short, plain list of what is NOT done / NOT in scope / known follow-ups. Never let the explainer read as "everything is perfect." If there are deferred items, name them and why they were deferred. Cross-check against `<your project ground-truth docs>` so no claim drifts from known reality.
+A short, plain list of what is NOT done / NOT in scope / known follow-ups. Never let the explainer read as "everything is perfect." If there are deferred items, name them and why they were deferred. Cross-check against the project's own status or ground-truth docs, when it has them, so no claim drifts from known reality.
 
 ## Step 6: Offer to crystallize
 
@@ -71,7 +71,7 @@ End by offering (one line, not a paragraph) to save the explanation as: a repo `
 ## Step 7: Render the zoomable altitude page
 
 1. When to render: the explanation is substantial (a system, a multi-part build, a nontrivial concept) or the user asks for an explainer, a zoomable page or HTML. Skip it for small conversational breakdowns.
-2. Copy `~/.claude/skills/breakdown/template.html` (the installed path) to `explainers/YYYY-MM-DD-<slug>.html` in the current project, creating `explainers/` if needed.
+2. Copy `template.html` from this skill's folder (`~/.claude/skills/breakdown/` for a personal install, `.claude/skills/breakdown/` inside a project) to `explainers/YYYY-MM-DD-<slug>.html` in the current project, creating `explainers/` if needed.
 3. Fill every `⟪placeholder⟫`: the header (title, kick, one-liner, meta), the four altitude sections with the same content Steps 1 to 5 produced, and the `const ANATOMY = {...}` node object, where each node has `in`, `out`, the rule it enforces and its real paths, and `cls` is `"gate"`, `"human"` or `"guard"` where that applies. Every value comes from the work being explained; never invent a path, number or receipt.
 4. Keep the CSS and the renderer script as they are. Every Mermaid diagram keeps its ASCII fallback in the `<details>` beside it. The page must work offline; the pinned Mermaid script from jsDelivr is its only network load, and without it the ASCII fallbacks open.
 5. After saving, check that no `⟪` remains in the file (`grep -c '⟪' <file>` prints 0), then print the full path and tell the user how to open it.
