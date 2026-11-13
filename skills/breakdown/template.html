@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Altitude Explainer — ⟪TITLE⟫</title>
+<title>Altitude Explainer: ⟪TITLE⟫</title>
 <style>
 :root{--bg:#0c0c10;--bg2:#121218;--panel:#16161e;--line:#26262f;--ink:#ece7dd;--mut:#9b958a;
 --faint:#6f6a62;--red:#ff4b3e;--gold:#e9b949;--grape:#9a7be8;--green:#54c08a;
@@ -56,7 +56,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <header>
 <div class="kick">Altitude Explainer · ⟪CONTEXT LINE: what/when⟫</div>
 <h1>⟪NAME WITH <em>ONE</em> ACCENT WORD⟫</h1>
-<p class="one-liner"><b>One sentence:</b> ⟪a single sentence a layperson understands — metaphor welcome, no jargon⟫</p>
+<p class="one-liner"><b>One sentence:</b> ⟪a single sentence a layperson understands (metaphor welcome, no jargon)⟫</p>
 <div class="meta-row"><span>explainer (ad-hoc) · template: _system/explainers/TEMPLATE.html</span><span>⟪optional: source docs / repo / session⟫</span></div>
 </header>
 
@@ -64,11 +64,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-fa
 
 <!-- ============ 100,000 FT ============ -->
 <section class="alt" id="alt-100k">
-<h2>100,000 ft — for anyone</h2>
+<h2>100,000 ft: for anyone</h2>
 <p class="sub">⟪The point in plain language. Why a normal person would care.⟫</p>
 <div class="panel"><div class="lbl">Where it sits</div>
 <pre class="ascii">
-⟪ASCII: the subject inside its wider world — boxes, arrows, under 70 cols⟫
+⟪ASCII: the subject inside its wider world: boxes, arrows, under 70 cols⟫
 </pre></div>
 <div class="panel"><div class="lbl">Inputs → outputs</div>
 <div class="mermaid">flowchart LR
@@ -88,7 +88,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-fa
 
 <!-- ============ 50,000 FT ============ -->
 <section class="alt" id="alt-50k">
-<h2>50,000 ft — strategic</h2>
+<h2>50,000 ft: strategic</h2>
 <p class="sub">⟪Where this fits the bigger goal; the problem-CLASS it solves.⟫</p>
 <div class="mermaid">flowchart LR
   subgraph LEFT["⟪upstream⟫"]
@@ -113,7 +113,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-fa
 
 <!-- ============ 30,000 FT ============ -->
 <section class="alt" id="alt-30k">
-<h2>30,000 ft — the pipeline / technical shape</h2>
+<h2>30,000 ft: the pipeline / technical shape</h2>
 <p class="sub">⟪N nodes, gates ⟐, guards. Every arrow a real handoff.⟫</p>
 <div class="mermaid">flowchart TB
   N1["1 ⟪NODE⟫"] --> N2{"2 ⟪GATE⟫ ⟐"}
@@ -121,7 +121,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-fa
   classDef default fill:#16161e,stroke:#26262f,color:#ece7dd
 </div>
 <details open><summary>ASCII version (the canonical drawing)</summary><pre class="ascii">
-⟪the full top-to-bottom ASCII pipeline — the load-bearing drawing;
+⟪the full top-to-bottom ASCII pipeline: the load-bearing drawing;
  gates as ╔═⟐═╗ boxes, guards listed at the bottom⟫
 </pre></details>
 <div class="panel"><div class="lbl">⟪The run that proved it / worked example⟫</div>
@@ -135,7 +135,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-fa
 
 <!-- ============ 10,000 FT ============ -->
 <section class="alt" id="alt-10k">
-<h2>10,000 ft — internals</h2>
+<h2>10,000 ft: internals</h2>
 <p class="sub">Every node with real commands, paths, rules. The level you debug at.</p>
 <div id="nodes"></div>
 <div class="panel"><div class="lbl">⟪Failure → why it mattered → fix⟫ (or: decisions → tradeoffs)</div>
@@ -157,7 +157,7 @@ const ANATOMY = {
  nodes: [
   {n:"01", t:"⟪NODE⟫", cls:"", in:"⟪input⟫", out:"⟪output⟫",
    rule:"⟪THE RULE this node enforces, in caps where it matters⟫",
-   paths:"⟪real paths · commands · schedules — receipts, never invented⟫"},
+   paths:"⟪real paths · commands · schedules: receipts, never invented⟫"},
   {n:"02", t:"⟪GATE⟫", cls:"gate", in:"⟪…⟫", out:"⟪…⟫",
    rule:"⟪what it passes, what it kills⟫", paths:"⟪…⟫"},
   {n:"G1", t:"GUARD: ⟪name⟫", cls:"guard", in:"⟪failure class watched⟫", out:"⟪alarm/fallback⟫",

@@ -1,0 +1,256 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Altitude Explainer: claude-skills</title>
+<style>
+:root{--bg:#0c0c10;--bg2:#121218;--panel:#16161e;--line:#26262f;--ink:#ece7dd;--mut:#9b958a;
+--faint:#6f6a62;--red:#ff4b3e;--gold:#e9b949;--grape:#9a7be8;--green:#54c08a;
+--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6}
+a{color:var(--red);text-decoration:none}a:hover{text-decoration:underline}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px 120px}
+header{padding:52px 0 10px}
+.kick{font-family:var(--mono);color:var(--red);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,50px);line-height:1.04;margin:12px 0 0;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--red)}
+.one-liner{font-size:18px;color:var(--ink);border-left:3px solid var(--gold);padding:10px 16px;background:var(--panel);border-radius:0 10px 10px 0;margin:22px 0 0;max-width:820px}
+.meta-row{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:14px;display:flex;gap:18px;flex-wrap:wrap}
+/* altitude switcher */
+.alts{position:sticky;top:0;z-index:9;display:flex;gap:8px;padding:14px 0;background:rgba(12,12,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:26px;flex-wrap:wrap}
+.alt-btn{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:9px 15px;cursor:pointer}
+.alt-btn .ft{color:var(--faint);font-size:10px;display:block;letter-spacing:.1em}
+.alt-btn.on{color:var(--ink);border-color:var(--gold);background:#1a1712}
+.alt-btn.on .ft{color:var(--gold)}
+.hint{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--faint);align-self:center}
+/* sections */
+.alt{display:none;padding-top:30px}.alt.show{display:block}
+.alt h2{font-size:24px;margin:0 0 4px}.alt .sub{color:var(--mut);margin:0 0 22px;max-width:760px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 22px;margin:16px 0}
+.panel.hi{border-color:#3a2f55;background:linear-gradient(180deg,#1c1722,#16151d)}
+.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+pre.ascii{font-family:var(--mono);font-size:12px;line-height:1.45;color:#c9c3b6;overflow-x:auto;margin:0;padding:14px 16px;background:#0e0e13;border:1px solid var(--line);border-radius:10px}
+.mermaid{background:#0e0e13;border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0;text-align:center}
+details{margin:10px 0}summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;color:var(--mut)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:10px 0}
+th{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);text-align:left}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+tr:hover td{background:#15131c}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:var(--mut);margin:1px 2px}
+.tag.gate{border-color:#4a3f22;color:var(--gold)}.tag.human{border-color:#274a35;color:var(--green)}.tag.guard{border-color:#4a2522;color:var(--red)}
+/* node cards (10k) */
+.node{background:var(--panel);border:1px solid var(--line);border-left:4px solid #4a4752;border-radius:11px;padding:15px 19px;margin:12px 0}
+.node.gate{border-left-color:var(--gold)}.node.human{border-left-color:var(--green)}.node.guard{border-left-color:var(--red)}
+.node .nh{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.node .nn{font-family:var(--mono);color:var(--faint);font-size:11px}
+.node .nt{font-weight:700;font-size:16.5px}
+.node .io{font-family:var(--mono);font-size:11.5px;color:var(--mut);margin-top:7px;line-height:1.7}
+.node .io b{color:#b9b3c9;font-weight:500}
+.node .rule{font-family:var(--mono);font-size:11.5px;color:var(--gold);background:#15130f;border:1px dashed #4a3f22;border-radius:7px;padding:7px 10px;margin-top:8px}
+.node .paths{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:8px;overflow-wrap:anywhere}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--faint);line-height:1.9}
+@media print{.alts{display:none}.alt{display:block!important}}
+</style></head><body><div class="wrap">
+
+<header>
+<div class="kick">Altitude Explainer · claude-skills repo · 53 folders under skills/</div>
+<h1>claude-skills, one <em>folder</em> per skill</h1>
+<p class="one-liner"><b>One sentence:</b> This repository is a shelf of 53 Claude Code skills: copy one folder into ~/.claude/skills/ and Claude Code can follow the SKILL.md inside it.</p>
+<div class="meta-row"><span>explainer · template: skills/breakdown/template.html</span><span>README.md, AGENTS.md, LICENSE, THIRD_PARTY_NOTICES.md, skills/</span></div>
+</header>
+
+<nav class="alts" id="alts"></nav>
+
+<!-- ============ 100,000 FT ============ -->
+<section class="alt" id="alt-100k">
+<h2>100,000 ft: for anyone</h2>
+<p class="sub">What you do first is read README.md. It lists 53 skills and gives the install commands: clone the repo, then copy a folder with cp -R into ~/.claude/skills/. Each of those 53 folders under skills/ is one skill, and each contains a SKILL.md. After a restart, Claude Code uses the skill when a task matches the description in that file.</p>
+<div class="panel"><div class="lbl">Where it sits</div>
+<pre class="ascii">
+this repo                         your Claude Code
++------------------+   cp -R    +----------------------+
+| skills/pp2p/     | ---------> | ~/.claude/skills/    |
+|   SKILL.md       |            |   pp2p/SKILL.md      |
++------------------+            +----------------------+
+       |
+       +-- README.md lists the 53 skills and Install
+       +-- LICENSE and THIRD_PARTY_NOTICES.md
+       +-- LICENSE.txt in 7 skill folders
+</pre></div>
+<div class="panel"><div class="lbl">Inputs → outputs</div>
+<div class="mermaid">flowchart LR
+  A["README.md"]:::in --> X{{"claude-skills"}}
+  C["skills/pp2p/SKILL.md"]:::in --> X
+  X --> B["~/.claude/skills/pp2p/"]:::out
+  classDef in fill:#15130f,stroke:#e9b949,color:#ece7dd
+  classDef out fill:#101a14,stroke:#54c08a,color:#ece7dd
+</div>
+<details><summary>ASCII version</summary><pre class="ascii">
+INPUTS                         OUTPUTS
+├─ README.md                   ├─ ~/.claude/skills/pp2p/
+└─ skills/pp2p/SKILL.md        └─ Claude Code loads it
+</pre></details></div>
+<div class="panel hi"><div class="lbl">Why a normal person should care</div>
+<p style="margin:6px 0 0">You keep the method in a folder instead of in a chat. The next session can follow the same steps. The license files show which folders are this repo's own MIT work and which folders keep an upstream license.</p></div>
+</section>
+
+<!-- ============ 50,000 FT ============ -->
+<section class="alt" id="alt-50k">
+<h2>50,000 ft: strategic</h2>
+<p class="sub">The bigger goal is a method Claude Code can load again from a folder, with the credit and the license written beside it. README.md is the index, skills/ holds the 53 methods, and LICENSE, THIRD_PARTY_NOTICES.md, and seven LICENSE.txt files hold the rights. AGENTS.md tells an agent to inspect skills/ first. The picture at 100,000 ft uses skills/pp2p because README.md line 69 copies that folder first. Any other folder under skills/ copies the same way.</p>
+<div class="mermaid">flowchart LR
+  subgraph LEFT["upstream work"]
+    A["README.md Credits"]
+  end
+  subgraph MID["claude-skills"]
+    B["skills/pp2p/SKILL.md"] --> C{"license check"}
+  end
+  subgraph RIGHT["Claude Code"]
+    D["~/.claude/skills/pp2p/"]
+  end
+  A --> B
+  C --> D
+  classDef default fill:#16161e,stroke:#26262f,color:#ece7dd
+</div>
+<details><summary>ASCII version</summary><pre class="ascii">
+upstream               claude-skills            downstream
+README Credits ------> skills/pp2p/SKILL.md
+                       license check ------> ~/.claude/skills/pp2p/
+THIRD_PARTY_NOTICES.md and 7 LICENSE.txt files
+</pre></details>
+<div class="panel"><div class="lbl">Problem-class it solves</div>
+<p style="margin:6px 0 0">The end state is one folder under ~/.claude/skills/ whose SKILL.md Claude Code can follow. README.md Install is the mechanism: clone this repo, then cp -R a skill folder.</p>
+<p style="margin:8px 0 0">The next session has the skill file after that folder is copied into ~/.claude/skills/. README.md line 74 says the skill then activates when the task matches its description, or you invoke it.</p>
+<p style="margin:8px 0 0">Use a folder from this repo when you want a Claude Code skill. README.md calls the library no-secrets, and it calls the contents methodology.</p>
+<p style="margin:8px 0 0">README.md says some skills were extracted from a private setup and some were adapted or inspired by public work, then scrubbed of personal paths, project names, and infrastructure. That public work is named in README.md Credits, under Adapted or copied, Inspired by, and Copies whose upstream carries no license, and in THIRD_PARTY_NOTICES.md, including anthropics/skills, openai/skills, and obra/superpowers.</p>
+<p style="margin:8px 0 0">The files behind this explanation are README.md, AGENTS.md, LICENSE, THIRD_PARTY_NOTICES.md, the seven LICENSE.txt files, and the SKILL.md in each folder under skills/. The repo has no dated writeup of a first instance growing into a hardened standard.</p></div>
+</section>
+
+<!-- ============ 30,000 FT ============ -->
+<section class="alt" id="alt-30k">
+<h2>30,000 ft: the pipeline / technical shape</h2>
+<p class="sub">Five handoffs, each one a real file or the copy README.md tells you to make. The SKILL.md check is the gate. The license files are the guard. The copy is the human step.</p>
+<div class="mermaid">flowchart TB
+  N1["1 README.md"] --> N2{"2 SKILL.md gate ⟐"}
+  N2 --> N3["3 license guard"]
+  N3 --> N4["4 copy the folder"]
+  N4 --> N5["5 Claude Code loads it"]
+  classDef default fill:#16161e,stroke:#26262f,color:#ece7dd
+</div>
+<details open><summary>ASCII version (the canonical drawing)</summary><pre class="ascii">
+BEFORE: the method sits in a chat
+AFTER:  the SKILL.md is in ~/.claude/skills/pp2p/
+
+README.md
+53 skills, Install, Credits, License
+              |
+              v
+skills/pp2p/SKILL.md
+name + description in the frontmatter
+              |
+              v
+╔═════════════⟐═════════════╗
+║ GUARD: license and credit ║
+║ notices and 7 LICENSE.txt ║
+╚═══════════════════════════╝
+              |
+              v
+╔═════════════════════════════╗
+║ HUMAN: cp -R the folder     ║
+║ into ~/.claude/skills/pp2p/ ║
+╚═════════════════════════════╝
+              |
+              v
+Claude Code loads that SKILL.md
+when the task matches its description
+</pre></details>
+<div class="panel"><div class="lbl">Install commands from README.md lines 68 to 74</div>
+<div class="mermaid">sequenceDiagram
+  participant A as Reader
+  participant B as README.md
+  A->>B: open Install
+  B->>A: clone line and three cp lines
+  A->>B: choose skills/pp2p, pp3p, or grill
+  B->>A: that folder SKILL.md is what you copy
+</div>
+<details><summary>ASCII version</summary><pre class="ascii">
+Reader                 README.md Install
+  |                          |
+  | open the Install lines   |
+  |------------------------->|
+  | clone URL and three cp   |
+  |------------------------->|
+  | copy pp2p, pp3p, or grill|
+  | into ~/.claude/skills/  |
+</pre></details></div>
+</section>
+
+<!-- ============ 10,000 FT ============ -->
+<section class="alt" id="alt-10k">
+<h2>10,000 ft: internals</h2>
+<p class="sub">Every node with real commands, paths, rules. The level you debug at.</p>
+<div id="nodes"></div>
+<div class="panel"><div class="lbl">Decisions and gaps</div>
+<table><tr><th>Decision</th><th>Why it mattered</th><th>Outcome</th></tr>
+<tr><td>Copy the folder with cp -R</td><td>README.md lines 68 to 74 are the install: git clone, three cp -R lines, and a Claude Code restart.</td><td>The commands are in README.md. <b>Shipped</b></td></tr>
+<tr><td>Keep Apache-2.0 text in the skill folder</td><td>Seven adapted skills carry an upstream LICENSE.txt beside SKILL.md.</td><td>Seven LICENSE.txt files are on disk. <b>Shipped</b></td></tr>
+<tr><td>Record the two folders this MIT license does not cover</td><td>skills/doc-coauthoring and skills/excalidraw-diagram have no LICENSE.txt. README.md lines 105 to 108 name them and state they are not covered by this repo MIT license.</td><td>The exclusion is in README.md Credits. <b>Shipped</b></td></tr>
+<tr><td>Ship the pre-release scan config</td><td>README.md line 5 names a gate that runs gitleaks, trufflehog, and a marker scan before release. No scanner config file is in this repo.</td><td>No config file is in the repo. <b>Pending</b></td></tr>
+<tr><td>Point agents at the install commands</td><td>AGENTS.md line 14 says no setup command was detected. README.md Install has the clone and the copy.</td><td>The commands live in README.md. <b>Pending</b></td></tr>
+</table></div>
+</section>
+
+<footer>
+EXAMPLE · claude-skills · skills/breakdown/examples/claude-skills-repo.html ·
+ALTITUDES 100K/50K/30K/10K · KEYS [ ] TO ZOOM · MERMAID RENDERS ONLINE, ASCII ALWAYS WORKS ·
+NOINDEX / PRIVATE
+</footer>
+</div>
+
+<script>
+// ======================= ANATOMY DATA (the swap-point for the template) =======================
+const ANATOMY = {
+ name: "claude-skills",
+ nodes: [
+  {n:"01", t:"README map", cls:"", in:"a fresh copy of this repo", out:"the skill table, the install commands, and the credit and license sections",
+   rule:"START AT README.md. THE HEADING The skills (53) IS THE FOLDER COUNT.",
+   paths:"README.md lines 3 to 5, 7, 65 to 74, 76, 103 to 112. AGENTS.md lines 9 and 14."},
+  {n:"02", t:"Skill folder", cls:"gate", in:"one directory directly under skills/", out:"SKILL.md with name and description. 35 folders contain only SKILL.md. 18 contain more files. Three add one more frontmatter key: skills/c4-architect/SKILL.md has argument-hint, skills/prompt-grounding/SKILL.md has triggers, skills/whatdidimiss/SKILL.md has user-invocable.",
+   rule:"A DIRECTORY UNDER skills/ IS A SKILL WHEN IT CONTAINS SKILL.md. 53 OF 53 DO.",
+   paths:"skills/pp2p/SKILL.md and the other 52 SKILL.md files. Side files include skills/c4-architect/reference/; skills/fullstack-agent/reference/; skills/excalidraw-diagram/references/; skills/prompt-engineer/references/; skills/reverse-engineer-to-learn/references/; skills/compound-engineering/templates/; skills/deep-recon/agents.md; skills/wiki-write/scripts/; skills/wiki-write/tests/; skills/pdf-generation/reference.md; skills/pdf-generation/scripts/validate-typst.sh; skills/model-migration/mine_sessions.sh."},
+  {n:"03", t:"Install copy", cls:"human", in:"the skill folder you chose. README.md shows skills/pp2p, skills/pp3p, and skills/grill", out:"that folder under ~/.claude/skills/",
+   rule:"COPY THE FOLDER WITH cp -R, THEN RESTART CLAUDE CODE. README.md GIVES NO PACKAGE INSTALL.",
+   paths:"README.md lines 68 to 74: git clone https://github.com/LucasCooperBey/claude-skills.git ; cp -R claude-skills/skills/pp2p ~/.claude/skills/ ; cp -R claude-skills/skills/pp3p ~/.claude/skills/ ; cp -R claude-skills/skills/grill ~/.claude/skills/ # or any other folder. skills/pp2p/SKILL.md, skills/pp3p/SKILL.md, skills/grill/SKILL.md."},
+  {n:"04", t:"GUARD: license and credit", cls:"guard", in:"a skill folder that may come from upstream work", out:"LICENSE for this repo MIT text, a LICENSE.txt in the folder, a notice in THIRD_PARTY_NOTICES.md, or the README statement that MIT does not cover the folder",
+   rule:"CHECK LICENSE, THIRD_PARTY_NOTICES.md, AND ANY LICENSE.txt. README.md SAYS doc-coauthoring AND excalidraw-diagram ARE NOT COVERED BY THIS REPO MIT LICENSE.",
+   paths:"LICENSE. THIRD_PARTY_NOTICES.md. README.md lines 76, 105 to 108, 110 to 112. skills/algorithmic-art/LICENSE.txt, skills/canvas-design/LICENSE.txt, skills/frontend-design/LICENSE.txt, skills/mcp-builder/LICENSE.txt, skills/slack-gif-creator/LICENSE.txt, skills/threat-model/LICENSE.txt, skills/webapp-testing/LICENSE.txt. skills/doc-coauthoring/SKILL.md and skills/excalidraw-diagram/SKILL.md have no LICENSE.txt beside them."}
+ ]
+};
+// ======================= RENDERER (stable across instances) =======================
+const ALTS=[["100k","alt-100k","ENTERPRISE"],["50k","alt-50k","DEPARTMENT"],["30k","alt-30k","PIPELINE"],["10k","alt-10k","INTERNALS"]];
+const nav=document.getElementById("alts");
+ALTS.forEach(([k,id,sub],i)=>{const b=document.createElement("button");b.className="alt-btn";b.innerHTML=`${k} ft<span class="ft">${sub}</span>`;b.onclick=()=>show(i);nav.appendChild(b);});
+const hint=document.createElement("span");hint.className="hint";hint.textContent="[ and ] to zoom · print = all levels";nav.appendChild(hint);
+let cur=0;
+function show(i){cur=i;document.querySelectorAll(".alt").forEach((s,j)=>s.classList.toggle("show",j===i));
+ nav.querySelectorAll(".alt-btn").forEach((b,j)=>b.classList.toggle("on",j===i));
+ if(window.mermaid){try{mermaid.run({querySelector:`#${ALTS[i][1]} .mermaid`});}catch(e){}}}
+document.addEventListener("keydown",e=>{const el=document.activeElement;
+ if(el&&(el.tagName==="INPUT"||el.tagName==="TEXTAREA"||el.isContentEditable))return;
+ if(e.key==="]")show(Math.min(cur+1,ALTS.length-1));if(e.key==="[")show(Math.max(cur-1,0));});
+// node cards
+const wrap=document.getElementById("nodes");
+ANATOMY.nodes.forEach(nd=>{const d=document.createElement("div");d.className="node "+nd.cls;
+ d.innerHTML=`<div class="nh"><span class="nn">${nd.n}</span><span class="nt">${nd.t}</span>`+
+ (nd.cls==="gate"?'<span class="tag gate">GATE ⟐</span>':nd.cls==="human"?'<span class="tag human">HUMAN GATE ⟐</span>':nd.cls==="guard"?'<span class="tag guard">GUARD</span>':"")+`</div>`+
+ `<div class="io"><b>in:</b> ${nd.in}<br><b>out:</b> ${nd.out}</div>`+
+ `<div class="rule">${nd.rule}</div><div class="paths">${nd.paths}</div>`;wrap.appendChild(d);});
+show(0);
+// mermaid (CDN when online; ASCII fallback is always present)
+const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js";
+s.onload=()=>{mermaid.initialize({startOnLoad:false,theme:"dark",themeVariables:{primaryColor:"#16161e",primaryTextColor:"#ece7dd",lineColor:"#9b958a",fontFamily:"ui-monospace,Menlo,monospace",fontSize:"13px"}});show(cur);};
+s.onerror=()=>{document.querySelectorAll(".mermaid").forEach(m=>{m.style.display="none"});document.querySelectorAll("details").forEach(d=>d.open=true);};
+document.head.appendChild(s);
+</script>
+</body></html>
