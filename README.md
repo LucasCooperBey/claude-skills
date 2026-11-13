@@ -4,7 +4,7 @@ A curated, **no-secrets** library of [Claude Code](https://claude.com/claude-cod
 
 These are generic skills for Claude Code, some extracted from a private setup and some adapted or inspired by other people's public work (see Credits), every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
 
-## The skills (52)
+## The skills (53)
 
 | Skill | What it does |
 |---|---|
@@ -59,6 +59,7 @@ These are generic skills for Claude Code, some extracted from a private setup an
 | **web-asset-generator** | Creates web assets including favicons, app icons, Open Graph images, social media cards, and other web grap… |
 | **webapp-testing** | Provides Playwright patterns and best practices for web application testing. |
 | **whatdidimiss** | After a chunk of work is done, surfaces what the model noticed but was never asked to do — adjacent tasks,… |
+| **wiki-write** | Files one dated, append-only wiki note for a real decision, a synthesis, an incident or a reflection, refuses a bad or duplicate entry and rebuilds one INDEX.md a later reader can search. |
 | **writing-plans** | Creates detailed implementation plans for multi-step tasks with exact file paths, code examples, and test c… |
 
 ## Install
@@ -97,6 +98,7 @@ Many of these skills started from other people's public work. Each one below nam
 - grill and techdebt are inspired by Boris Cherny's Claude Code tips (https://x.com/bcherny/status/2017742741636321619); the post states no license.
 - reverse-engineer-to-learn is inspired by Kevin Chen (https://kevinchen.co/blog/rewind-ai-app-teardown/), and the skill also names Yash Poojary's methodology, whose source was not located.
 - web-asset-generator is inspired by https://github.com/alonw0/web-asset-generator (MIT, Copyright (c) 2025 Web Asset Generator Contributors).
+- wiki-write follows the LLM wiki pattern Andrej Karpathy described; its scripts, schema and tests are original.
 
 **Copies whose upstream carries no license**
 
