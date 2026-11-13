@@ -6,8 +6,8 @@ This file records the public work these skills were copied from, adapted from, o
 
 URL: https://github.com/anthropics/skills
 Compared at: 2c5958ecac7cee2b583967a2c4981d0f4a75c579
-Holder: Copyright 2026 Anthropic, PBC. on the LICENSE.txt files for algorithmic-art, canvas-design, mcp-builder, slack-gif-creator, and webapp-testing. frontend-design's LICENSE.txt names no copyright holder. The doc-coauthoring folder has no copyright line.
-License: Apache-2.0 for the six adapted skills. Each of those folders carries the upstream LICENSE.txt fetched at the sha above. The doc-coauthoring folder has no license file.
+Holder: Copyright 2026 Anthropic, PBC. on the LICENSE.txt files for algorithmic-art, canvas-design, mcp-builder, slack-gif-creator, and webapp-testing. frontend-design's LICENSE.txt names no copyright holder.
+License: Apache-2.0 for the six adapted skills. Each of those folders carries the upstream LICENSE.txt fetched at the sha above.
 
 Skills:
 - algorithmic-art, adapted. See skills/algorithmic-art/LICENSE.txt.
@@ -16,7 +16,7 @@ Skills:
 - mcp-builder, adapted. See skills/mcp-builder/LICENSE.txt.
 - slack-gif-creator, adapted (low confidence). See skills/slack-gif-creator/LICENSE.txt.
 - webapp-testing, adapted. See skills/webapp-testing/LICENSE.txt.
-- doc-coauthoring, copied. The upstream folder has no LICENSE.txt. It is credited in the README. This repo's MIT license does not cover it.
+- doc-coauthoring was a copy. The upstream folder has no LICENSE.txt, so the copy was removed from this repo on 2026-11-13. The README links the upstream folder.
 
 ## openai/skills
 
@@ -198,7 +198,7 @@ Compared at: 8646fcc9f74f38539c6cdb4c969723336a96ddcd
 Author: Cole Medin
 Holder: none
 License: none. GitHub's license API returns null, and the repo has no LICENSE file.
-Skill: excalidraw-diagram, copied. It is credited in the README. This repo's MIT license does not cover it.
+Skill: excalidraw-diagram was a copy of this repo at the sha above. The copy was removed from this repo on 2026-11-13 because the upstream carries no license. The README links the author's repo.
 
 ## Mark Kashef, Dynamic Workflows Prompt Pack
 

@@ -4,7 +4,7 @@ A curated, **no-secrets** library of [Claude Code](https://claude.com/claude-cod
 
 These are generic skills for Claude Code, some extracted from a private setup and some adapted or inspired by other people's public work (see Credits), every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
 
-## The skills (53)
+## The skills (51)
 
 | Skill | What it does |
 |---|---|
@@ -24,10 +24,8 @@ These are generic skills for Claude Code, some extracted from a private setup an
 | **database-migrations** | Modifies database schemas safely with migration strategies, rollback procedures, and zero-downtime deployme… |
 | **deep-recon** | Multi-agent research swarm that finds existing solutions before you write a single line of code. |
 | **design-taste** | Senior UI/UX Engineer. |
-| **doc-coauthoring** | Guide users through a structured workflow for co-authoring documentation. |
 | **e2b-sandbox** | Secure cloud sandbox execution for AI coding agents using E2B. |
 | **ecosystem-audit** | Audit your entire .claude ecosystem (skills, agents, slash commands, hooks, rules, memory) for duplicates,… |
-| **excalidraw-diagram** | Create Excalidraw diagram JSON files that make visual arguments. |
 | **executing-plans** | Implements written plans through batched execution with review checkpoints. |
 | **frontend-design** | Builds web components, pages, applications, landing pages, and styled web UIs. |
 | **fullstack-agent** | Enables AI agents to create complete web applications with file system operations, code execution, template… |
@@ -100,12 +98,10 @@ Many of these skills started from other people's public work. Each one below nam
 - web-asset-generator is inspired by https://github.com/alonw0/web-asset-generator (MIT, Copyright (c) 2025 Web Asset Generator Contributors).
 - wiki-write follows the LLM wiki pattern Andrej Karpathy described; its scripts, schema and tests are original.
 
-**Copies whose upstream carries no license**
+**Two skills that live in their authors' repos**
 
-- excalidraw-diagram is copied from Cole Medin's coleam00/excalidraw-diagram-skill (https://github.com/coleam00/excalidraw-diagram-skill), which has no license file.
-- doc-coauthoring is copied from anthropics/skills (https://github.com/anthropics/skills), whose folder has no license file.
-
-These two are credited here and are not covered by this repo's MIT license.
+- excalidraw-diagram, which turns an idea into an editable Excalidraw diagram, is Cole Medin's skill: https://github.com/coleam00/excalidraw-diagram-skill. A copy sat in this repo until 2026-11-13. His repo carries no license file, so the copy came down and the link goes to him.
+- doc-coauthoring is Anthropic's skill: https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring. A copy sat here until the same day; that folder carries no license file.
 
 ## License
 

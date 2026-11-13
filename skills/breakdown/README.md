@@ -15,7 +15,7 @@ Type `/breakdown` after finishing a piece of work, or `/breakdown <a repo, folde
 
 ## Example
 
-The filled page [examples/claude-skills-repo.html](examples/claude-skills-repo.html) explains the claude-skills repository: the 53 skill folders, how a skill is laid out, how the README install commands work, where credits and licenses live, and what a reader does first.
+The filled page [examples/claude-skills-repo.html](examples/claude-skills-repo.html) explains the claude-skills repository as it stood on 2026-11-12: the 53 skill folders it held then (two copies of other authors' skills were removed the next day, so the page's count and license rows describe the earlier state), how a skill is laid out, how the README install commands work, where credits and licenses live, and what a reader does first.
 
 GitHub shows the HTML file as source, so open it from your clone in a browser (on macOS: `open claude-skills/skills/breakdown/examples/claude-skills-repo.html`). Its first screen, the 100,000 ft level:
 
