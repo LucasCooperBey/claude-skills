@@ -24,10 +24,10 @@ Doing a task generates side-knowledge — an adjacent bug, a risky edge case, an
 
 3. **Format — one line per item**, ranked, with a label and a verdict:
    ```
-   1. [a] Three other call-sites use the old signature — they'll break at runtime. — worth doing? y
-   2. [b] New endpoint has no rate-limit; trivial to abuse. — worth doing? y
-   3. [c] CHANGELOG not updated for this change. — worth doing? y
-   4. [d] Ask assumed Qdrant, but this path writes to pgvector. — worth doing? y/n (flag — confirm intent)
+   1. [a] Three other call-sites use the old signature, so they'll break at runtime. | worth doing? y
+   2. [b] New endpoint has no rate-limit; trivial to abuse. | worth doing? y
+   3. [c] CHANGELOG not updated for this change. | worth doing? y
+   4. [d] Ask assumed Qdrant, but this path writes to pgvector. | worth doing? y/n (flag: confirm intent)
    ```
    Keep each item to a single line. No sub-bullets, no code blocks, no re-explaining what you built. Total output stays short — aim for the few that matter, not an exhaustive list. If you have more than ~6, keep the top 6 and drop the rest.
 

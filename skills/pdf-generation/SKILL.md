@@ -107,12 +107,12 @@ function escapeTypstString(str: string): string {
 
 1. **Enable verbose logging:**
    ```typescript
-   generateFieldReportPdf(report, photos, { verbose: true })
+   generatePdf(data, images, { verbose: true })  // your own PDF function
    ```
 
 2. **Check Typst diagnostics:**
    ```typescript
-   generateFieldReportPdf(report, photos, { includeDiagnostics: true })
+   generatePdf(data, images, { includeDiagnostics: true })  // your own PDF function
    ```
 
 3. **Common failure patterns:**

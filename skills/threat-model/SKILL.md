@@ -18,7 +18,7 @@ Systematic threat modeling rooted in the actual codebase. Every claim references
 
 ## When NOT to Use
 
-- General code review (use `/grill` instead)
+- General code review (use `/grill` instead, the grill skill in the same repo as this one)
 - Architecture summaries without security focus
 
 ## Arguments
@@ -168,7 +168,7 @@ Flag any gaps in the report under "Coverage Gaps."
 ## Output Format
 
 ```markdown
-## Threat Model — {project} — {date}
+## Threat Model: {project}, {date}
 
 ### System Scope
 - Entrypoints: [list with paths]
@@ -190,7 +190,7 @@ Flag any gaps in the report under "Coverage Gaps."
 
 ### Threats
 **HIGH**
-- T-1: [abuse path] — [file:line] — [controls]
+- T-1: [abuse path] | [file:line] | [controls]
 
 **MEDIUM**
 - T-n: ...

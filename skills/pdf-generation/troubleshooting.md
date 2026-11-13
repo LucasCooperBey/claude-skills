@@ -169,7 +169,7 @@ p, li { orphans: 3; widows: 3; }
 
 1. **Enable diagnostics:**
    ```typescript
-   const result = await generateFieldReportPdf(report, photos, {
+   const result = await generatePdf(data, images, {  // your own PDF function
      includeDiagnostics: true,
      verbose: true
    });
