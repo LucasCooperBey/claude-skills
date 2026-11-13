@@ -416,3 +416,7 @@ await sbx.kill();
 - Templates: https://e2b.dev/docs/sandbox-template
 - Python SDK: https://pypi.org/project/e2b-code-interpreter/
 - TypeScript SDK: https://www.npmjs.com/package/@e2b/code-interpreter
+
+## Source
+
+Inspired by https://e2b.dev/docs and the DeepLearning.AI course Building Coding Agents with Tool Execution.

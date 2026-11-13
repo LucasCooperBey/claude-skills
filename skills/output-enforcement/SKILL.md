@@ -47,3 +47,7 @@ Before finalizing any response, verify:
 - Every item the user requested is present and finished
 - Code blocks contain actual runnable code, not descriptions of what code would do
 - Nothing was shortened to save space
+
+## Source
+
+Adapted from https://github.com/Leonxlnx/taste-skill (MIT, Copyright (c) 2026 Leonxlnx). Changed for this repo by Lucas Cooper-Bey in 2026: trailing spaces only; the lines match the upstream after a trailing-space strip.

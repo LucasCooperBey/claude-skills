@@ -28,7 +28,7 @@ During long sessions, context compaction drops earlier messages. Critical workin
 
 ### Pinned Context (500 char limit)
 
-- **Always** read on session start alongside MEMORY.md
+- Read it when you are asked to read the scratchpad
 - Use for critical session facts: "Project uses bun", "On branch feature/xyz", "Don't touch the legacy monolith"
 - Keep SHORT — this eats into your context budget
 - Overwrite semantics: new pin with same topic replaces old
@@ -36,7 +36,7 @@ During long sessions, context compaction drops earlier messages. Critical workin
 ### Working Memory
 
 - Timestamped session notes
-- Auto-pruned after 7 days
+- Prune these entries when asked
 - Good for: debugging breadcrumbs, temporary findings, "tried X, didn't work because Y"
 - Newest entries at top
 
@@ -75,8 +75,8 @@ Project uses bun. On branch claude/explore-feature-xyz. Legacy module is 9K line
 
 ## Integration
 
-- Scratchpad is loaded on session start if it exists
-- When a Working note proves valuable across sessions, promote it to memory with `/scratchpad --promote` (moves to MEMORY.md)
+- Read, write, and prune the scratchpad file when asked
+- When a Working note should be kept, write it into the Manual section when asked
 - When a session ends, stale Working entries can be pruned with `/scratchpad --prune`
 
 ## Examples

@@ -131,3 +131,7 @@ C) Just note it and move on
 | `--fix-all` | Auto-fix everything safe, no prompt |
 | `--report-only` | No fixes, just report |
 | `--scope "dir"` | Scan specific directory |
+
+## Source
+
+Inspired by Boris Cherny's Claude Code tips (https://x.com/bcherny/status/2017742741636321619), the tip "Build a /techdebt slash command and run it at the end of every session".

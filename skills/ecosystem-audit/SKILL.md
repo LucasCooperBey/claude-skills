@@ -5,6 +5,8 @@ description: Audit your entire .claude ecosystem (skills, agents, slash commands
 
 # Ecosystem Audit
 
+This fans out many agents and needs the Workflow tool with explicit opt-in.
+
 Periodic hygiene for a sprawling agentic OS. Inspired by Mark Kashef's third dynamic-workflow use case (YT 9_ExDZFlaNc): as you keep adding skills/agents/rules, things go stale and contradictory, and you never have time to revisit. Fan out agents to find the rot.
 
 ## When to run
@@ -57,3 +59,7 @@ Each item: what, where (exact path), why it's a problem, recommended action (del
 ## Workflow reliability (learned in practice)
 
 The finder agents do heavy investigation (Read/Grep/Bash) — forcing a `schema` on them is fragile (some fail the first run). Prefer: finders return MARKDOWN findings, a synthesis agent structures them; OR end each finder prompt with "Your FINAL action MUST be the StructuredOutput call." Also: the orphaned-hook + memory-contradiction dimensions are cheaper done deterministically (jq over settings.json hooks + test -f each script; grep MEMORY.md links vs files) than via agents.
+
+## Source
+
+Inspired by Mark Kashef's Dynamic Workflows Prompt Pack (https://markkashef.gumroad.com/l/dynamic-workflows-prompt-pack-claude), use case 3, "The Setup Audit".

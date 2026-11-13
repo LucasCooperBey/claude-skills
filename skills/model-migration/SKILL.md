@@ -60,3 +60,7 @@ Mark converted the HTML to a 2-min explainer with Hyperframes (open-source, by H
 ## Workflow reliability (learned 2026-06-02)
 
 Do NOT attach a `schema` to the prompt-pattern agents — they read a chunk and naturally end in prose, so StructuredOutput forcing fails (12/12 failed on the first run; synthesis compensated). Have pattern agents return MARKDOWN and let the synthesis agent read it, OR end their prompt with "Your FINAL action MUST be the StructuredOutput call; do not end with prose." Synthesis/writer agents with no schema are reliable. Pattern: have agents return MARKDOWN and let synthesis read it; schema forcing on prose-output agents fails reliably.
+
+## Source
+
+Inspired by Mark Kashef's Dynamic Workflows Prompt Pack (https://markkashef.gumroad.com/l/dynamic-workflows-prompt-pack-claude), use case 1, "The Personalized Upgrade Guide".

@@ -171,3 +171,7 @@ npx pixelmatch reference.png generated.png diff.png 0.1
 10. → Score: 93, verdict: pass
 11. → Done, commit
 ```
+
+## Source
+
+Adapted from https://github.com/Yeachan-Heo/oh-my-claudecode (MIT, Copyright (c) 2025 Yeachan Heo); the skill first appeared in https://github.com/Yeachan-Heo/oh-my-codex (MIT, Copyright (c) 2026 Yeachan-Heo). Changed for this repo by Lucas Cooper-Bey in 2026: the file is expanded.

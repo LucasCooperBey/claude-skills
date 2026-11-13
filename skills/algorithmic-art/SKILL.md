@@ -131,3 +131,7 @@ const palettes = {
 Every artwork produces:
 1. Markdown explaining the generative aesthetic philosophy
 2. Single HTML artifact containing algorithm, UI, and all functionality
+
+## Source
+
+Adapted from https://github.com/anthropics/skills (Apache-2.0, Copyright 2026 Anthropic, PBC.). Changed for this repo by Lucas Cooper-Bey in 2026: condensed from 302 lines to 111, keeping the two-phase algorithmic philosophy then p5.js flow.

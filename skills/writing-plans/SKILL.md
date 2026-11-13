@@ -250,3 +250,7 @@ Every plan (deliberation or not) must meet:
 | Risk coverage | All identified risks have mitigations |
 | Specificity | No vague terms without metrics |
 | Step sizing | Steps sized to actual scope (not always exactly 5) |
+
+## Source
+
+Adapted from https://github.com/obra/superpowers (MIT, Copyright (c) 2025 Jesse Vincent). Changed for this repo by Lucas Cooper-Bey in 2026: wording rewritten, keeping the same plan premise, task size, and output path.

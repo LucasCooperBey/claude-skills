@@ -161,3 +161,7 @@ git commit -m "Address review feedback: [summary]"
 
 # Re-request if changes were significant
 ```
+
+## Source
+
+Adapted from https://github.com/obra/superpowers (MIT, Copyright (c) 2025 Jesse Vincent). Changed for this repo by Lucas Cooper-Bey in 2026: wording rewritten into tables.

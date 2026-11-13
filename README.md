@@ -2,7 +2,7 @@
 
 A curated, **no-secrets** library of [Claude Code](https://claude.com/claude-code) **skills** — reusable methodology packets that teach the agent *how* to do a class of work well. Each is a self-contained `SKILL.md` (plus optional `references/`); drop a folder into `~/.claude/skills/` and Claude auto-invokes it when your task matches its description.
 
-These are the generic skills extracted from a larger private Claude Code setup — every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
+These are generic skills for Claude Code, some extracted from a private setup and some adapted or inspired by other people's public work (see Credits), every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
 
 ## The skills (52)
 
@@ -72,6 +72,41 @@ cp -R claude-skills/skills/grill ~/.claude/skills/    # or any other folder
 
 Restart Claude Code; the skill activates automatically when your task matches its description, or invoke it explicitly. Placeholders like `<your-output-dir>` mark spots to point at your own paths.
 
+## Credits
+
+Many of these skills started from other people's public work. Each one below names its source; the license notices are in THIRD_PARTY_NOTICES.md.
+
+**Adapted or copied**
+
+- algorithmic-art, canvas-design, mcp-builder, slack-gif-creator, and webapp-testing are adapted from Anthropic (https://github.com/anthropics/skills, Apache-2.0, Copyright 2026 Anthropic, PBC.).
+- frontend-design is adapted from Anthropic (https://github.com/anthropics/skills, Apache-2.0); its LICENSE.txt names no copyright holder.
+- threat-model is adapted from OpenAI (https://github.com/openai/skills, Apache-2.0, OpenAI, github.com/openai/skills).
+- executing-plans, writing-plans, requesting-code-review, and verification-before-completion are adapted from Jesse Vincent (https://github.com/obra/superpowers, MIT, Copyright (c) 2025 Jesse Vincent).
+- design-taste (copied with modifications) and output-enforcement (copied) come from Leonxlnx (https://github.com/Leonxlnx/taste-skill, MIT, Copyright (c) 2026 Leonxlnx), and redesign is adapted from that same repo.
+- visual-verdict is adapted from Yeachan Heo (https://github.com/Yeachan-Heo/oh-my-claudecode, MIT, Copyright (c) 2025 Yeachan Heo) and first appeared in https://github.com/Yeachan-Heo/oh-my-codex (MIT, Copyright (c) 2026 Yeachan-Heo).
+- prompt-engineer is adapted from Anthropic's prompting best practices (https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices); no open license and no holder were found on that page.
+
+**Inspired by**
+
+- adversarial-research, ecosystem-audit, and model-migration are inspired by Mark Kashef's Dynamic Workflows Prompt Pack (https://markkashef.gumroad.com/l/dynamic-workflows-prompt-pack-claude); no license is stated.
+- coding-agents, data-analyst-agent, fullstack-agent, and e2b-sandbox are inspired by the DeepLearning.AI short course Building Coding Agents with Tool Execution (E2B); no canonical public repo was found, and a student copy is at https://github.com/jose-deblas/building-coding-agents. Owner and license for the course are unverified.
+- e2b-sandbox is also inspired by https://e2b.dev/docs.
+- compound-engineering is inspired by Every's compound-engineering-plugin (https://github.com/EveryInc/compound-engineering-plugin, MIT, Copyright (c) 2025 Every); only the name and the analyze-plan-execute-learn idea match.
+- context-budget is inspired by Affaan Mustafa's everything-claude-code (https://github.com/affaan-m/everything-claude-code, MIT, Copyright (c) 2026 Affaan Mustafa).
+- d3js-visualization is inspired by https://github.com/chrisvoncsefalvay/claude-d3js-skill, which has no license file.
+- grill and techdebt are inspired by Boris Cherny's Claude Code tips (https://x.com/bcherny/status/2017742741636321619); the post states no license.
+- reverse-engineer-to-learn is inspired by Kevin Chen (https://kevinchen.co/blog/rewind-ai-app-teardown/), and the skill also names Yash Poojary's methodology, whose source was not located.
+- web-asset-generator is inspired by https://github.com/alonw0/web-asset-generator (MIT, Copyright (c) 2025 Web Asset Generator Contributors).
+
+**Copies whose upstream carries no license**
+
+- excalidraw-diagram is copied from Cole Medin's coleam00/excalidraw-diagram-skill (https://github.com/coleam00/excalidraw-diagram-skill), which has no license file.
+- doc-coauthoring is copied from anthropics/skills (https://github.com/anthropics/skills), whose folder has no license file.
+
+These two are credited here and are not covered by this repo's MIT license.
+
 ## License
 
-MIT — see [LICENSE](./LICENSE). By [@LucasCooperBey](https://github.com/LucasCooperBey). Extracted clean from a private setup; more land here as they're scrubbed.
+My own skills are MIT, see LICENSE. Skills adapted from other projects keep their upstream licenses: each Apache-2.0 skill carries its LICENSE.txt in its folder, and THIRD_PARTY_NOTICES.md holds the MIT notices.
+
+By [@LucasCooperBey](https://github.com/LucasCooperBey).

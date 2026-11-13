@@ -46,4 +46,4 @@
 **Why this first:** [justification referencing the matrix]
 **Scope:** Small | Medium | Large
 **Estimated approach:** [1-2 sentences on how to fix]
-**Research needed:** Yes (invoke /recon) | No (proceed to planning)
+**Research needed:** Yes (invoke the deep-recon skill) | No (proceed to planning)

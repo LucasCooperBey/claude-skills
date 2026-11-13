@@ -13,7 +13,7 @@ Systematic threat modeling rooted in the actual codebase. Every claim references
 
 - Before deploying a new service or API to production
 - When adding auth, payments, file uploads, or other security-sensitive features
-- Before Procore or other external API integrations, or multi-tenant features
+- Before external API integrations, or multi-tenant features
 - When explicitly asked to threat model a codebase
 
 ## When NOT to Use
@@ -216,3 +216,7 @@ If `--save` flag or user confirms, write the report to:
 ```
 
 Create the directory if it doesn't exist.
+
+## Source
+
+Adapted from https://github.com/openai/skills (Apache-2.0, OpenAI, github.com/openai/skills). Changed for this repo by Lucas Cooper-Bey in 2026: wording mostly rewritten, keeping the same stage order.

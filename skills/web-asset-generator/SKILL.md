@@ -181,3 +181,7 @@ async function generateAllAssets(sourceLogo, outputDir) {
   console.log('All assets generated!');
 }
 ```
+
+## Source
+
+Inspired by https://github.com/alonw0/web-asset-generator (MIT, Copyright (c) 2025 Web Asset Generator Contributors).

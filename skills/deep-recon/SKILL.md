@@ -19,12 +19,12 @@ Research swarm that scours the internet for existing solutions before you build 
 ## Quick Start
 
 ```
-/recon [problem description]
+/deep-recon [problem description]
 
 Examples:
-/recon real-time collaborative editing for a web app
-/recon email deliverability monitoring system
-/recon AI agent orchestration with tool use
+/deep-recon real-time collaborative editing for a web app
+/deep-recon email deliverability monitoring system
+/deep-recon AI agent orchestration with tool use
 ```
 
 The problem description is passed as `$ARGUMENTS`. If empty, ask the user what to research.

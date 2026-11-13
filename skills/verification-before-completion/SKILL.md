@@ -168,3 +168,7 @@ See [agent-guardrails.md](../../context/agent-guardrails.md) for retry budgets, 
 - [agent-guardrails.md](../../context/agent-guardrails.md) - Retry budgets, escalation ladder
 - [output-markers.md](../../context/output-markers.md) - Standard markers
 - [validation-oracles.md](../../context/validation-oracles.md) - Baseline comparison
+
+## Source
+
+Adapted from https://github.com/obra/superpowers (MIT, Copyright (c) 2025 Jesse Vincent). Changed for this repo by Lucas Cooper-Bey in 2026: a proactive-verification loop added.

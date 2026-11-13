@@ -446,3 +446,7 @@ Help the user understand:
 Always provide actionable insights relevant to <your-business-type>.
 """
 ```
+
+## Source
+
+Inspired by the DeepLearning.AI course Building Coding Agents with Tool Execution, lesson L4. No canonical public repo was found.

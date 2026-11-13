@@ -10,7 +10,7 @@ Review the work you JUST completed in this session and surface the things you no
 
 ## Why this exists
 
-Doing a task generates side-knowledge — an adjacent bug, a risky edge case, an obvious next step, a fact that quietly contradicts the original plan. That knowledge normally evaporates when the turn ends. This skill makes you spend it before it's gone. It is **opt-in** (Lucas invokes it deliberately) precisely so it never nags — do not propose wiring it into a hook, Stop event, or settings.json.
+Doing a task generates side-knowledge — an adjacent bug, a risky edge case, an obvious next step, a fact that quietly contradicts the original plan. That knowledge normally evaporates when the turn ends. This skill makes you spend it before it's gone. It is **opt-in** (you invoke it deliberately) precisely so it never nags — do not propose wiring it into a hook, Stop event, or settings.json.
 
 ## What to do
 

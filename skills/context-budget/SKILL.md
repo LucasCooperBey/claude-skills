@@ -51,7 +51,7 @@ Each hook in settings.json ≈ 50-100 tokens.
 | CLAUDE.md | measure directly | 1 | ? |
 | MEMORY.md | measure directly | 1 | ? |
 
-**Key insight from ECC:** "Your 200k context window before compacting might only be 70k with too many tools enabled."
+**Key insight from [everything-claude-code](https://github.com/affaan-m/everything-claude-code) (Affaan Mustafa):** "Your 200k context window before compacting might only be 70k with too many tools enabled."
 
 ### 3. Classify Components
 
@@ -83,3 +83,7 @@ TOP CONSUMERS:
 RECOMMENDATIONS:
 - {action}
 ```
+
+## Source
+
+Inspired by Affaan Mustafa's everything-claude-code (https://github.com/affaan-m/everything-claude-code).

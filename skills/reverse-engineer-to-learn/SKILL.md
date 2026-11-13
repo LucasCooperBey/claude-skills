@@ -79,3 +79,7 @@ For deep analysis, feed the [Rewind teardown blog](https://kevinchen.co/blog/rew
 | `app-teardown` | Technical methods (plutil, otool, strings) |
 | `deep-recon` | Code Analyzer uses teardown library |
 | `writing-plans` | Teardowns inform scope |
+
+## Source
+
+Inspired by Kevin Chen (https://kevinchen.co/blog/rewind-ai-app-teardown/). The skill also names Yash Poojary's methodology; that source was not located.

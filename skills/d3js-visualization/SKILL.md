@@ -213,3 +213,7 @@ svg.selectAll('rect')
   .attr('role', 'listitem')
   .attr('aria-label', d => `${d.category}: ${d.value}`);
 ```
+
+## Source
+
+Inspired by https://github.com/chrisvoncsefalvay/claude-d3js-skill (no license file in that repo).

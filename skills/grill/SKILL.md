@@ -148,3 +148,7 @@ Detect project type and run tests:
 - `Makefile` with test target → `make test`
 
 If tests fail after fixes, revert the failing fix (`git checkout -- <file>`) and note in report.
+
+## Source
+
+Inspired by Boris Cherny's Claude Code tips (https://x.com/bcherny/status/2017742741636321619), the item "Challenge Claude: Grill me on these changes".

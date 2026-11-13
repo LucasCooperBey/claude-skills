@@ -231,3 +231,7 @@ for (const btn of buttons) {
   console.log(await btn.textContent());
 }
 ```
+
+## Source
+
+Adapted from https://github.com/anthropics/skills (Apache-2.0, Copyright 2026 Anthropic, PBC.). Changed for this repo by Lucas Cooper-Bey in 2026: routes to agent-browser and Playwright and does not ship the upstream scripts and examples.

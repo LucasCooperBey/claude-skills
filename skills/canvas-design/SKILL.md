@@ -425,3 +425,7 @@ For single outputs:
 ---
 
 *Communication through form, space, and color. Not text.*
+
+## Source
+
+Adapted from https://github.com/anthropics/skills (Apache-2.0, Copyright 2026 Anthropic, PBC.). Changed for this repo by Lucas Cooper-Bey in 2026: the wording is rewritten and the tool stack (Typst, Sharp) is new.

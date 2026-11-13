@@ -163,3 +163,7 @@ Add to `~/.claude/claude_desktop_config.json`:
   }
 }
 ```
+
+## Source
+
+Adapted from https://github.com/anthropics/skills (Apache-2.0, Copyright 2026 Anthropic, PBC.). Changed for this repo by Lucas Cooper-Bey in 2026: paraphrased, keeping the same four phases in the same order.

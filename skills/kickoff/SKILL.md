@@ -81,7 +81,7 @@ editing pipeline. Should this change cover all 5 types, or just field reports?
 Dispatch the deep-recon research swarm:
 
 ```
-Invoke: /recon [problem description]
+Invoke the deep-recon skill with: [problem description]
 
 4 parallel agents search for:
 - Existing packages/solutions

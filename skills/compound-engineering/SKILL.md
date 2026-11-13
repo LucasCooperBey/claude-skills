@@ -216,3 +216,7 @@ A compound cycle is complete when:
 - [agent-guardrails.md](../../context/agent-guardrails.md) - Time budgets, retry limits
 - [output-markers.md](../../context/output-markers.md) - Standard output format
 - [validation-oracles.md](../../context/validation-oracles.md) - Baseline validation
+
+## Source
+
+Inspired by https://github.com/EveryInc/compound-engineering-plugin (MIT, Copyright (c) 2025 Every), the name and the analyze-plan-execute-learn idea only. It is unverified whether the skill drew on that plugin or on Geoffrey Huntley's Ralph loop, which this skill also names.

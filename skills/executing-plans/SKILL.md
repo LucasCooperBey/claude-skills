@@ -266,3 +266,7 @@ See [agent-guardrails.md](../../context/agent-guardrails.md) for time budgets, r
 - [agent-guardrails.md](../../context/agent-guardrails.md) - Time budgets, retry limits
 - [validation-oracles.md](../../context/validation-oracles.md) - Baseline validation
 - [output-markers.md](../../context/output-markers.md) - Standard output format
+
+## Source
+
+Adapted from https://github.com/obra/superpowers (MIT, Copyright (c) 2025 Jesse Vincent). Changed for this repo by Lucas Cooper-Bey in 2026: wording rewritten, and goal-driven success criteria added.

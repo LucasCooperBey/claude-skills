@@ -180,3 +180,7 @@ When generating SaaS dashboards or feature sections:
 - [ ] `prefers-reduced-motion` respected for all animations
 - [ ] Focus indicators visible on all interactive elements
 - [ ] Color contrast meets WCAG AA (4.5:1 body, 3:1 large)
+
+## Source
+
+Adapted from https://github.com/Leonxlnx/taste-skill (MIT, Copyright (c) 2026 Leonxlnx). Changed for this repo by Lucas Cooper-Bey in 2026: an Invocation section and stack detection added.

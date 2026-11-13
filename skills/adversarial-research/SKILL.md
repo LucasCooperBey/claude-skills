@@ -5,6 +5,8 @@ description: Deep research where agents adversarially fact-check each other's fi
 
 # Adversarial Research
 
+A run costs about 200 agents and 20 minutes.
+
 Peer-review-by-agent. Inspired by Mark Kashef's second dynamic-workflow use case (YT 9_ExDZFlaNc): a single deep-research agent claims "checked 300 sources" but never plays devil's advocate against itself. This spins up a separate verification swarm whose job is to break each claim.
 
 ## When to run
@@ -19,7 +21,7 @@ Relationship to your existing skills: `deep-recon` finds existing solutions (pri
 
 Pull raw claims from the relevant surface:
 
-- **X/Twitter** — Apify X scraper actor (search `apify` MCP: `search-actors` → `tweet scraper`). You already use Apify for YouTube analytics. Alternatively the native X API toolkit (`~/Developer/personal/x-tools/`).
+- **X/Twitter** — Apify X scraper actor (search `apify` MCP: `search-actors` → `tweet scraper`). You already use Apify for YouTube analytics. Alternatively your own X or web search tool.
 - **Web/GitHub** — `mcp__exa__web_search_advanced_exa`, `mcp__exa__crawling_exa`, `mcp__ref__*`.
 
 Extract atomic claims (one assertion each) with their source URL. Write to a claims file.
@@ -51,4 +53,8 @@ Each claim → `survives` (independently verified) / `cut` (refuted) / `unconfir
 
 ## Workflow reliability (learned 2026-06-02)
 
-CRITICAL: the verify agents do web research and end in prose, so forcing a `schema` on them failed catastrophically (~190/239 dropped to null on the first run). Two safe fixes: (1) have each verifier return a one-line verdict in plain text like `VERDICT: survives | url | reason` and parse with a regex/jq pass, or (2) end the prompt with "Your FINAL action MUST be the StructuredOutput call; do not end your turn with prose." Also cap extraction — 80 tweets produced 239 fragmentary "claims"; instruct extractors to emit only distinct, substantive, testable claims (target ≤ ~5/tweet). See [[feedback_workflow_structured_output_failure]].
+CRITICAL: the verify agents do web research and end in prose, so forcing a `schema` on them failed catastrophically (~190/239 dropped to null on the first run). Two safe fixes: (1) have each verifier return a one-line verdict in plain text like `VERDICT: survives | url | reason` and parse with a regex/jq pass, or (2) end the prompt with "Your FINAL action MUST be the StructuredOutput call; do not end your turn with prose." Also cap extraction — 80 tweets produced 239 fragmentary "claims"; instruct extractors to emit only distinct, substantive, testable claims (target ≤ ~5/tweet).
+
+## Source
+
+Inspired by Mark Kashef's Dynamic Workflows Prompt Pack (https://markkashef.gumroad.com/l/dynamic-workflows-prompt-pack-claude), use case 2, the fact-checked research report with a verify pass.

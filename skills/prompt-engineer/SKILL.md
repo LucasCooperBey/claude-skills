@@ -48,3 +48,7 @@ https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/claude-p
 ## Not this skill
 - Auditing a prompt's *factual claims* against your codebase/strategy → `prompt-grounding`.
 - Generating a Ralph autonomous-loop prompt → `ralph-prompt-generator`.
+
+## Source
+
+Adapted from https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (no open license found on the page, no holder found on the page). Changed for this repo by Lucas Cooper-Bey in 2026: the references file digests that page and the SKILL.md body is original.

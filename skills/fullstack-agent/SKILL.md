@@ -148,3 +148,7 @@ demo.launch(share=True, height=800)
 3. **Provide Context**: Tell the agent about existing patterns
 4. **Incremental Requests**: Build features step by step
 5. **Review Changes**: Check modified files before next prompt
+
+## Source
+
+Inspired by the DeepLearning.AI course Building Coding Agents with Tool Execution, lesson L6. No canonical public repo was found.

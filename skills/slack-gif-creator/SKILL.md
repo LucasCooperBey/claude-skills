@@ -156,3 +156,7 @@ def optimize_gif(input_path, output_path, colors=64):
 - Complementary colors pop in Slack's UI
 - Test on both light and dark Slack themes
 - Keep animations simple and loopable
+
+## Source
+
+Adapted from https://github.com/anthropics/skills (Apache-2.0, Copyright 2026 Anthropic, PBC.). Changed for this repo by Lucas Cooper-Bey in 2026: constraints rewritten, and the upstream core Python library is not included.

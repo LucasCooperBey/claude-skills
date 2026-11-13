@@ -282,3 +282,7 @@ For single components:
 SUCCESS: Created [component type] with [key characteristics]
 METRIC: files=[paths]
 ```
+
+## Source
+
+Adapted from https://github.com/anthropics/skills (Apache-2.0, Anthropic; this skill's LICENSE.txt names no copyright holder). Changed for this repo by Lucas Cooper-Bey in 2026: expanded from 44 lines to 284 and rewritten, with no shared 5-word runs.

@@ -406,3 +406,7 @@ async function codingAgent(query: string, maxSteps = 10) {
   }
 }
 ```
+
+## Source
+
+Inspired by the DeepLearning.AI short course Building Coding Agents with Tool Execution (E2B). No canonical public repo was found; a student copy is at https://github.com/jose-deblas/building-coding-agents, and the original owner is unconfirmed.
