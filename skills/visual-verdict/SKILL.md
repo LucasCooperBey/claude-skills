@@ -24,7 +24,7 @@ Compare generated UI screenshots against reference images and return a strict JS
 | Input | Required | Source |
 |-------|----------|--------|
 | Reference image(s) | Yes | Figma screenshot, design mockup, ASCII art render, or prior approved screenshot |
-| Generated screenshot | Yes | `/screenshot` skill, Playwright MCP `browser_take_screenshot`, or manual screenshot |
+| Generated screenshot | Yes | a screenshot skill if you have one, Playwright MCP `browser_take_screenshot`, or manual screenshot |
 | Category hint | Optional | e.g. `dashboard`, `form`, `table`, `marketing`, `mobile` |
 
 ## Output Contract
@@ -64,8 +64,7 @@ Return **JSON only** with this exact shape:
 ### Step 1: Capture Current State
 
 ```
-# Option A: Use /screenshot skill
-/screenshot browser
+# Option A: a screenshot skill, if your setup has one
 
 # Option B: Use Playwright MCP
 browser_take_screenshot → saved to /tmp/screenshot-{timestamp}.png
@@ -79,7 +78,7 @@ User provides screenshot path
 Read reference image(s) — can be:
 - Figma export screenshot
 - ASCII mockup rendered to image
-- Prior approved screenshot from `~/.claude/artifacts/visual-verdicts/`
+- Prior approved screenshot from `visual-verdicts/` in the project
 - Design spec image
 
 ### Step 3: Compare and Score
@@ -117,7 +116,7 @@ Evaluate across these dimensions (weighted):
 
 ### Step 5: Save Verdict
 
-Save to `~/.claude/artifacts/visual-verdicts/{component}-{timestamp}.json`
+Save to `visual-verdicts/{component}-{timestamp}.json` in the project root (add `visual-verdicts/` to `.gitignore` if you don't want it committed)
 
 This creates an improvement trail:
 ```
@@ -153,7 +152,7 @@ npx pixelmatch reference.png generated.png diff.png 0.1
 | `design-taste` | Run visual-verdict after design-taste generates initial UI |
 | `frontend-design` | Verification gate before marking implementation done |
 | `redesign` | Before/after comparison for upgrade quality |
-| `/screenshot` | Input capture for generated screenshots |
+| a screenshot skill (if you have one) | Input capture for generated screenshots |
 | `review-changes` | Add visual-verdict as pre-commit check for UI changes |
 
 ## Example: Full Loop
@@ -161,12 +160,12 @@ npx pixelmatch reference.png generated.png diff.png 0.1
 ```
 1. User: "Implement the home page from the ASCII mockup"
 2. → frontend-design builds the page
-3. → /screenshot captures result
+3. → take a screenshot of the result
 4. → visual-verdict compares against ASCII mockup render
 5. → Score: 78, verdict: revise
 6.    Differences: sidebar width, heading size, card padding
 7. → Apply 3 suggestions
-8. → /screenshot captures updated result
+8. → take a screenshot of the updated result
 9. → visual-verdict re-scores
 10. → Score: 93, verdict: pass
 11. → Done, commit

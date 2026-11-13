@@ -100,11 +100,11 @@ The research brief becomes input for `writing-plans`:
 
 | Skill | Relationship |
 |-------|-------------|
-| `brainstorming` | Triggers recon for non-trivial problems |
-| `writing-plans` | Receives research brief as input |
-| `app-teardown` | Code Analyzer can use teardown methods for deep analysis |
-| `package-research` | Solution Scout can delegate to this for npm/pypi specifics |
-| `compound` | Analysis phase triggers recon when needed |
+| `brainstorming`, if you have it | Triggers recon for non-trivial problems |
+| the `writing-plans` skill in this repo | Receives research brief as input |
+| `app-teardown`, if you have it | Code Analyzer can use teardown methods for deep analysis |
+| the `package-research` skill in this repo | Solution Scout can delegate to this for npm/pypi specifics |
+| the `compound-engineering` skill in this repo | Analysis phase triggers recon when needed |
 
 ## Model Routing
 

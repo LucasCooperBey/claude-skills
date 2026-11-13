@@ -11,7 +11,7 @@ Periodic hygiene for a sprawling agentic OS. Inspired by Mark Kashef's third dyn
 
 ## When to run
 
-Sporadically — every couple weeks to monthly. NOT daily. It burns tokens via fan-out. Differs from `capabilities` (which counts/indexes what exists) and `agent-enlightenment` (which designs new agents): this one finds what to **delete, merge, or fix**.
+Sporadically, every couple weeks to monthly. NOT daily. It burns tokens via fan-out. If your setup has a skill that counts or indexes what exists, or one that designs new agents, this one differs from both: it finds what to **delete, merge, or fix**.
 
 ## The recipe
 
@@ -21,9 +21,10 @@ Sporadically — every couple weeks to monthly. NOT daily. It burns tokens via f
 # Skills
 find ~/.claude/skills -maxdepth 2 -name 'SKILL.md' | wc -l
 # Slash command name collisions (the foo-bar vs foo:bar pattern)
-ls ~/.claude/commands | sed -E 's/[-:]/ /' | awk '{print $1}' | sort | uniq -d
-# Agents (active vs dormant)
-ls ~/.claude/agents/*.md ~/.claude/agents/dormant/*.md
+ls ~/.claude/commands | sed -E 's/[-:]/ /' | cut -d' ' -f1 | sort | uniq -d
+# Agents (plus a dormant/ subfolder, only if your setup keeps one)
+ls ~/.claude/agents/*.md
+[ -d ~/.claude/agents/dormant ] && ls ~/.claude/agents/dormant/*.md
 # Memory files
 find ~/.claude/projects/*/memory -name '*.md' | wc -l
 # Hook surface
@@ -32,7 +33,7 @@ jq '.hooks' ~/.claude/settings.json
 
 ### 2. Fan-out finders (Workflow tool, explicit opt-in)
 
-Run finders in parallel, each scoped to one rot type:
+These finders need Claude Code's Workflow tool. Run finders in parallel, each scoped to one rot type:
 
 - **duplicate-skill-finder** — same capability under different names; stock Anthropic skills copied multiple times; plugin variants shadowing local skills (your CLAUDE.md may already flag certain skills as existing multiple times).
 - **stale-demo-finder** — skills/agents created for one demo/video and never used again. Cross-reference names against the tool-use histogram from a session mine — a `Skill` invocation count of 0 for a skill = never fired.

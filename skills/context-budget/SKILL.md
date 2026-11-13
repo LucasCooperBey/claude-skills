@@ -18,21 +18,25 @@ Estimate how much of your context window is consumed by the agent harness infras
 
 Run these in parallel:
 
-**MCP Tools:**
+**Enabled plugins (each can add MCP tools):**
 ```bash
-# Count MCP tools (each tool ≈ 500 tokens for schema)
+# Count enabled plugins; each MCP tool a plugin adds costs ≈ 500 tokens of schema
 cat ~/.claude/settings.json | python3 -c "
 import json, sys
 d = json.load(sys.stdin)
 # Count enabled plugins
 plugins = {k:v for k,v in d.get('enabledPlugins',{}).items() if v}
-print(f'Enabled plugins: {len(plugins)}')
+print(f'Enabled plugins (MCP tools not counted): {len(plugins)}')
 for p in plugins: print(f'  - {p}')
 "
 ```
 
-**Skills loaded in CLAUDE.md:**
-Count skill references in CLAUDE.md capability routing table. Each skill listing in the system prompt ≈ 100-200 tokens.
+**Installed skills:**
+Count `~/.claude/skills/*/SKILL.md` plus the project's `.claude/skills/*/SKILL.md`:
+```bash
+find -L ~/.claude/skills .claude/skills -mindepth 2 -maxdepth 2 -name SKILL.md 2>/dev/null | wc -l
+```
+Each skill listing in the system prompt ≈ 100-200 tokens.
 
 **Agent definitions:**
 Each agent defined in `~/.claude/agents/` ≈ 300-800 tokens when loaded.
@@ -70,14 +74,14 @@ For each component, classify:
 ## Output Format
 
 ```
-CONTEXT BUDGET AUDIT — {date}
+CONTEXT BUDGET AUDIT: {date}
 ═══════════════════════════════
 Estimated infrastructure overhead: ~{N}k tokens
 Estimated available for work: ~{M}k tokens ({P}% of 200k)
 
 TOP CONSUMERS:
-1. {component} — ~{N} tokens
-2. {component} — ~{N} tokens
+1. {component}: ~{N} tokens
+2. {component}: ~{N} tokens
 ...
 
 RECOMMENDATIONS:

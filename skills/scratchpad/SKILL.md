@@ -5,7 +5,7 @@ description: Compaction-resilient session notepad. Save working context that sur
 
 # Scratchpad — Compaction-Resilient Session Notes
 
-Save important context to `~/.claude/artifacts/scratchpad.md` that survives conversation compaction.
+Save important context to `.scratchpad.md` in the project root, a file that survives conversation compaction. Add `.scratchpad.md` to your `.gitignore` if you don't want it committed.
 
 ## Why This Exists
 
@@ -56,7 +56,7 @@ Project uses bun. On branch claude/explore-feature-xyz. Legacy module is 9K line
 
 ## Working
 - [2026-04-01 20:30] Found auth bug in UserContext — missing useEffect dependency
-- [2026-04-01 19:15] pretext library installed, sidebar-layout.ts created
+- [2026-04-01 19:15] date-fns installed, date-range-picker.tsx created
 - [2026-04-01 18:00] 4-team audit complete, ASCII atlas at docs/ASCII-SCREEN-ATLAS.md
 
 ## Manual
@@ -67,7 +67,7 @@ Project uses bun. On branch claude/explore-feature-xyz. Legacy module is 9K line
 
 ## Behavior
 
-1. Creates `~/.claude/artifacts/scratchpad.md` if it doesn't exist
+1. Creates `.scratchpad.md` in the project root if it doesn't exist
 2. Parses argument to determine section (--pin, --save, or default Working)
 3. Appends with timestamp for Working entries
 4. Warns if Pinned exceeds 500 chars
@@ -83,7 +83,7 @@ Project uses bun. On branch claude/explore-feature-xyz. Legacy module is 9K line
 
 ```
 /scratchpad The sidebar width transition bug is in client-pdf.ts:800-809, re-join step
-/scratchpad --pin On branch claude/explore-pretext-integration. Don't push to main.
+/scratchpad --pin On branch feature/date-range-picker. Don't push to main.
 /scratchpad --save Project uses 5-tier PDF fallback: Typst → Cloud → Puppeteer → HTML → JSON
 /scratchpad --show
 /scratchpad --prune
