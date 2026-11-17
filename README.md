@@ -4,7 +4,7 @@ A curated, **no-secrets** library of [Claude Code](https://claude.com/claude-cod
 
 These are generic skills for Claude Code, some extracted from a private setup and some adapted or inspired by other people's public work (see Credits), every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
 
-## The skills (51)
+## The skills (52)
 
 | Skill | What it does |
 |---|---|
@@ -17,6 +17,7 @@ These are generic skills for Claude Code, some extracted from a private setup an
 | **coding-agents** | Core patterns for building AI coding agents with tool calling, agent loops, and autonomous code execution —… |
 | **compound-engineering** | Connected analyze-plan-execute-learn-repeat cycle with persistent memory. |
 | **context-budget** | Audit token consumption across all loaded components — skills, agents, MCP tools, rules, hooks |
+| **council** | Convenes a council of real models on a decision: independent positions, cross-examination, dissent kept by name. |
 | **counterfactual** | Generate structured alternate timelines for a past decision log entry and write them as a `reflection` entr… |
 | **critique** | Single-pass 3-agent critique for ANY work product — plans, code, designs, architecture. |
 | **d3js-visualization** | Creates data visualizations with D3.js including custom charts, network diagrams, geographic maps, and publ… |
