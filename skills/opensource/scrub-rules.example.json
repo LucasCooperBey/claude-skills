@@ -1,0 +1,26 @@
+[
+  {
+    "file": "wordstat.py",
+    "find": "Written for the Examplecorp support team as part of project bluefinch.",
+    "replace": "A small example tool.",
+    "count": 1
+  },
+  {
+    "file": "wordstat.py",
+    "find": "/mnt/build-machine/wordstat-reports",
+    "replace": "./wordstat-reports",
+    "count": 1
+  },
+  {
+    "file": "wordstat.py",
+    "find": "# TODO: ask the BLUEFINCH team before changing the report format.",
+    "replace": "# TODO: decide on a report format.",
+    "count": 1
+  },
+  {
+    "file": "README.md",
+    "find": "It was built at Examplecorp for the bluefinch project. Reports go to\n/mnt/build-machine/wordstat-reports unless WORDSTAT_OUT_DIR is set.",
+    "replace": "Reports go to ./wordstat-reports unless WORDSTAT_OUT_DIR is set.",
+    "count": 1
+  }
+]

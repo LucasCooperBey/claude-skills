@@ -4,7 +4,7 @@ A curated, **no-secrets** library of [Claude Code](https://claude.com/claude-cod
 
 These are generic skills for Claude Code, some extracted from a private setup and some adapted or inspired by other people's public work (see Credits), every one scrubbed of personal paths, project names, and infrastructure, and gated (gitleaks + trufflehog + marker scan) before release. Methodology, not config.
 
-## The skills (52)
+## The skills (53)
 
 | Skill | What it does |
 |---|---|
@@ -35,6 +35,7 @@ These are generic skills for Claude Code, some extracted from a private setup an
 | **mcp-builder** | Builds MCP (Model Context Protocol) servers for API integration. |
 | **model-migration** | Generate a personalized "how to use this new model" report by mining ALL your local Claude Code sessions, t… |
 | **naming-the-machine** | Scan skills, tools, workflows, and infrastructure to identify and name emergent expressions of value — prod… |
+| **opensource** | Takes one tool out of an internal repository and publishes it as its own: five yes-or-no checks, a clean copy with fresh history, a scrub and a leak search that run on any folder. |
 | **output-enforcement** | Overrides default LLM truncation behavior. |
 | **package-research** | Researches packages, dependencies, and APIs before integration. |
 | **pdf-generation** | Generates PDFs using Typst templates, handles print layouts, and processes images with Sharp. |
